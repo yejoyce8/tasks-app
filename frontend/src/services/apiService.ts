@@ -10,7 +10,7 @@ export interface Task {
 export async function createTask(newTask: Partial<Task>): Promise<Task> {
     try {
         console.log('Hitting createTask endpoint..');
-        const response = await axios.post<Task>('http://localhost:5000/api/createTask', newTask);
+        const response = await axios.post<Task>('http://localhost:5000/api/gpt/createTask', newTask);
         console.log('Received response! ', response);
         return response.data;
     } catch(error) {
